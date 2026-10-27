@@ -1,0 +1,12 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css);
+
+@import url(base/reset.css);
+@import url(base/var.css);
+
+@import url(layout/background.css);
+@import url(layout/menus.css);
+@import url(layout/levelarea.css);
+@import url(layout/eel.css);
+@import url(layout/animations.css);
+
+@import url(style.css);

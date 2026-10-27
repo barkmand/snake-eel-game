@@ -1,0 +1,50 @@
+.eelsquare{
+    background-color: var(--eel-clr);
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.eelsquare.eelhead{
+    border-radius: 50px 50px 15px 15px;
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    transform: rotateZ(0deg);
+}
+
+/*  <div class="eelsquare eelhead">
+        <div class="eeleye"><div class="eyeglint"></div><div class="eyeglint2"></div></div>
+        <div class="eeleye"><div class="eyeglint"></div><div class="eyeglint2"></div></div>
+    </div>
+    <div class="eelsquare"></div>
+    <div class="eelsquare"></div>
+    <div class="eelsquare"></div> */
+
+/* #region EEL EYES */
+
+.eeleye{
+    background-color: black;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    margin-top: 10px;
+}
+
+.eyeglint{
+    background-color: white;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin: 3px;
+}
+
+.eyeglint2{
+    background-color: white;
+    width: 2.5px;
+    height: 2.5px;
+    border-radius: 50%;
+    margin: 4px 2px 2px 11px;
+}
+
+/* #endregion EEL EYE */
