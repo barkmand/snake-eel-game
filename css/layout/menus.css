@@ -1,3 +1,101 @@
-p{
-    color: white;
+.retry-menu{
+    width: 700px;
+    height: 670px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: 500ms;
+
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+/* #region TOP MENU */
+
+.menu{
+    background-color: var(--menu-bcc);
+    width: 400px;
+    height: 200px;
+    border-radius: inherit;
+    margin-bottom: 0.4rem;
+
+    padding: 4rem;
+    font-size: 3rem;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu i{
+    margin-top: 11px;
+}
+
+.fa-trophy{
+    color: gold;
+}
+
+.menu .score-counter{
+    margin: 0 2px;
+}
+
+/* #endregion TOP MENU */
+
+/* #region BUTTONS */
+
+.menu-btn{
+    background-color: var(--menu-btn-clr);
+    width: 400px;
+    height: 50px;
+    border-radius: inherit;
+    cursor: pointer;
+    transition: 150ms ease-out;
+    &:hover{
+        transform: translateY(-3px);
+    }
+
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    text-align: center;
+    user-select: none;
+}
+
+.menu-btn i{
+    flex: 0;
+    margin-left: 20px;
+}
+
+.menu-btn p{
+    flex: 6;
+}
+
+.menu-btn .seperator{
+    flex: 1;
+}
+
+.mute-btn p{
+    margin-right: 4px;
+}
+.fa-volume{
+    margin-right: 3px;
+}
+
+
+
+
+/* #endregion BUTTONS */

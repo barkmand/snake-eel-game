@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" sizes="16x16" href="https://playsnake.org/assets/images/icon-32.png">
     <script type="module" src="js/index.js"></script>
     <link rel="stylesheet" href="css/index.css">
-    <title>Snake Game Bjarke</title>
+    <title>Eel Game</title>
 </head>
 <body>
+    <section class="retry-menu hidden">
+        <section class="menu">
+            <div class="menu-seperator">
+                <i class="fa-solid fa-fish"></i>
+                <span class="score-counter">0</span>
+            </div>
+            <div class="menu-seperator">
+                <i class="fa-solid fa-trophy"></i>
+                <span class="high-score-counter">0</span>
+            </div>
+        </section>
+        <div class="menu-btn retry-btn"><i class="fa-solid fa-rotate-right"></i><p>Retry</p><div class="seperator"></div></div>
+        <div class="menu-btn mute-btn"><i class="fa-solid fa-volume mute-icon"></i><p>Mute</p><div class="seperator"></div></div>
+    </section>
     <main class="main">
         <section class="top-bar">
-            <div class="score"><i class="fa-solid fa-fish test"></i><span class="score-counter">0</span></div>
-            <div class="timer"><span class="timer-counter">0</span><i class="fa-solid fa-stopwatch"></i></div>
+            <div class="score"><i class="fa-solid fa-fish"></i><span class="score-counter">0</span></div>
         </section>
         <section class="levelarea">
         </section>

@@ -4,6 +4,7 @@ body{
     justify-content: center;
     align-items: center;
     max-height: 100vh;
+    position: relative;
 }
 
 .bgimg{
@@ -19,6 +20,7 @@ main{
     flex-direction: column;
     justify-content: center;
     height: 100vh;
+    position: relative;
 }
 
 .top-bar{
@@ -31,6 +33,7 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 10px 10px 0 0;
 }
 
 .fa-fish{

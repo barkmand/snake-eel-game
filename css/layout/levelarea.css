@@ -8,6 +8,7 @@
     grid-template-rows: repeat(11, 1fr);
     column-gap: 0;
     row-gap: 0;
+    border-radius: 0 0 10px 10px;
 }
 
 .levelarea .tile{

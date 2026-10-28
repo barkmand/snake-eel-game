@@ -16,5 +16,4 @@ export function gridTiles(){
         <div class="tile tile1"></div>
         `
         )
-    
 }

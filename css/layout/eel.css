@@ -13,6 +13,8 @@
     transform: rotateZ(0deg);
 }
 
+/* WHEN THE EEL DIES, THE EYES SHOULD TURN INTO A >-< EMOJI */
+
 /*  <div class="eelsquare eelhead">
         <div class="eeleye"><div class="eyeglint"></div><div class="eyeglint2"></div></div>
         <div class="eeleye"><div class="eyeglint"></div><div class="eyeglint2"></div></div>
@@ -47,4 +49,4 @@
     margin: 4px 2px 2px 11px;
 }
 
-/* #endregion EEL EYE */
+/* #endregion EEL EYES */
