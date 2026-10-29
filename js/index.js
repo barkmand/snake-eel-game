@@ -8,6 +8,8 @@ gridTiles()
 
 import { mute } from "./functions/mute.js";
 import { restart } from "./functions/restart.js";
+import { eel } from "./functions/eel.js";
 
 mute()
 restart()
+eel()
