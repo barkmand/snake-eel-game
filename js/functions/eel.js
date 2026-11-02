@@ -7,66 +7,119 @@ export function eel(){
     
     let position = 69
 
-    // CREATING THE EEL HEAD, GIVING IT EYES, AND SETTING IT AT THE STARTING POSITION
-    const head = document.createElement("div")
-    head.classList.add("eelsquare", "eelhead")
-// FIND OUT WHAT appendChild MEANS
-    tiles[position].appendChild(head)
-    head.innerHTML = `
+    // #region CREATING THE EELHEAD, GIVING IT EYES, AND SETTING IT AT THE STARTING POSITION
+    const eelHead = document.createElement("div")
+    eelHead.classList.add("eelsquare", "eelhead")
+    eelHead.classList.remove("up")
+    eelHead.classList.remove("down")
+    eelHead.classList.remove("left")
+    eelHead.classList.add("right")
+    eelHead.innerHTML = `
         <div class="eeleye"><div class="eyeglint"></div><div class="eyeglint2"></div></div>
         <div class="eeleye"><div class="eyeglint"></div><div class="eyeglint2"></div></div>
     `
-
+    tiles[position].appendChild(eelHead)
+    // #endregion
     
     let newPosition
-    
-    document.addEventListener("keydown", (event) => {
-        if(event.key.startsWith("Arrow")){
-            event.preventDefault()
+    let direction
+    const retryMenu = document.querySelector(".retry-menu")
+
+    // #region SETTING direction ON EVERY WASD/ARROWKEY KEYPRESS
+    document.addEventListener("keydown", (keypress) => {
+        if(keypress.key.startsWith("Arrow")){
+            keypress.preventDefault()
+        }
+        if(!retryMenu.classList.contains("hidden")){
+            return
         }
         newPosition = position
-        // FIND OUT WHAT SWITCH AND CASE AND BREAK AND TOLOWERCASE MEANS AND WHY WE WRITE event INSTEAD OF LEAVING IT OUT
-        // SETTING newPosition ON EVERY WASD KEYPRESS
-        switch (event.key.toLowerCase()){
+        switch (keypress.key.toLowerCase()){
             case "w":
             case "arrowup":
-                newPosition -= columns
+                direction = 1
                 break
             
             case "s":
             case "arrowdown":
-                newPosition += columns
+                direction = 3
                 break
             
             case "a":
             case "arrowleft":
-                newPosition--
+                direction = 2
                 break
 
             case "d":
             case "arrowright":
-                newPosition++
+                direction = 4
                 break
 
-            default:
-                return
         }
+        // NOTE TO SELF: SWITCH/CASE IS JUST CHECKING AN if STATEMENT AGAINST EACH CASE, AKA THIS THING CHECKS if(event.key.toLowerCase() == "w" || "arrowup"){direction = 1} AND THEN DOES THAT FOR EACH case, SO THIS IS JUST A CLEANER WAY OF WRITING THAT. else CAN BE WRITTEN AS default:
+    })
+    // #endregion
 
-        // STOPPING EELHEAD FROM MOVING OUTSIDE THE GRID
+    // #region MOVING THE EELHEAD ACCORDING TO direction AT AN INTERVAL
+    
+    function moveEelHead(){
+        if(!retryMenu.classList.contains("hidden") || newPosition == null){
+            return
+        }
+        if(direction == 1){
+            newPosition -= columns
+            eelHead.classList.add("up")
+            eelHead.classList.remove("down")
+            eelHead.classList.remove("left")
+            eelHead.classList.remove("right")
+        }
+        if(direction == 3){
+            newPosition += columns
+            eelHead.classList.remove("up")
+            eelHead.classList.add("down")
+            eelHead.classList.remove("left")
+            eelHead.classList.remove("right")
+        }
+        if(direction == 2){
+            newPosition--
+            eelHead.classList.remove("up")
+            eelHead.classList.remove("down")
+            eelHead.classList.add("left")
+            eelHead.classList.remove("right")
+        }
+        if(direction == 4){
+            newPosition++
+            eelHead.classList.remove("up")
+            eelHead.classList.remove("down")
+            eelHead.classList.remove("left")
+            eelHead.classList.add("right")
+        }
+        
         if(
             (newPosition < 0 || newPosition >= tiles.length) ||
             (
-                (["a", "arrowleft"].includes(event.key.toLowerCase()) && position % columns == 0) ||
-                (["d", "arrowright"].includes(event.key.toLowerCase())&& position % columns == 12)
+                ((position % columns == 0) && direction == 2) ||
+                ((position % columns == 12) && direction == 4)
             )
         ){
             console.log("game over")
+            position = 69
+            newPosition = 69
+            direction = 4
+            eelHead.classList.remove("up")
+            eelHead.classList.remove("down")
+            eelHead.classList.remove("left")
+            eelHead.classList.add("right")
+            tiles[position].appendChild(eelHead)
+            retryMenu.classList.toggle("hidden")
         }else{
-        // MOVING THE EELHEAD
-            tiles[newPosition].appendChild(head)
+            tiles[newPosition].appendChild(eelHead)
             position = newPosition
         }
-    })
+    }
 
+    setInterval(moveEelHead, 500)
 
+    // #endregion
+    
 }

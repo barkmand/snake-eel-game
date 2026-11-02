@@ -5,12 +5,24 @@
     border-radius: 15px;
 }
 
-.eelsquare.eelhead{
+.eelhead{
     border-radius: 50px 50px 15px 15px;
     display: flex;
     justify-content: center;
     gap: 7px;
+}
+
+.eelhead.up{
     transform: rotateZ(0deg);
+}
+.eelhead.down{
+    transform: rotateZ(180deg);
+}
+.eelhead.left{
+    transform: rotateZ(270deg);
+}
+.eelhead.right{
+    transform: rotateZ(90deg);
 }
 
 /* WHEN THE EEL DIES, THE EYES SHOULD TURN INTO A >-< EMOJI */
