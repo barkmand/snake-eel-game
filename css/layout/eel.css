@@ -12,6 +12,10 @@
     gap: 7px;
 }
 
+.eelhead.dead{
+    gap: 5px;
+}
+
 .eelhead.up{
     transform: rotateZ(0deg);
 }
@@ -19,23 +23,43 @@
     transform: rotateZ(180deg);
 }
 .eelhead.left{
-    transform: rotateZ(270deg);
+    transform: rotateZ(270.01deg);
 }
 .eelhead.right{
-    transform: rotateZ(90deg);
+    transform: rotateZ(90.01deg);
 }
 
-/* WHEN THE EEL DIES, THE EYES SHOULD TURN INTO A >-< EMOJI */
-
-/*  <div class="eelsquare eelhead">
-        <div class="eeleye"><div class="eyeglint"></div><div class="eyeglint2"></div></div>
-        <div class="eeleye"><div class="eyeglint"></div><div class="eyeglint2"></div></div>
-    </div>
-    <div class="eelsquare"></div>
-    <div class="eelsquare"></div>
-    <div class="eelsquare"></div> */
-
 /* #region EEL EYES */
+
+.dead .eeleye{
+    display: none;
+}
+
+.deadeye{
+    /* clip-path: polygon(65% 20%, 70% 30%, 24% 50%, 70% 70%, 65% 80%, 0% 50%); */
+    clip-path: url(#custom-arrow-clip);
+    background-color: black;
+    height: 28px;
+    width: 28px;
+    margin-top: 10px;
+    display: none;
+}
+
+.deadeye2{
+    transform: rotateZ(179.98deg) translateY(0.5px);
+}
+
+.dead .deadeye{
+    display: block;
+}
+
+/* .dead .eyeglint{
+    display: none;
+}
+
+.dead .eyeglint2{
+    display: none;
+} */
 
 .eeleye{
     background-color: black;

@@ -10,6 +10,6 @@ export function mute(){
         }else{
             muted = 1
         }
-        /* INSERT CODE THAT ACTUALLY MUTES SOUND EFFECTS */
+    /* INSERT CODE THAT ACTUALLY MUTES SOUND EFFECTS */
     })
 }
