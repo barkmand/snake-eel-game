@@ -113,16 +113,16 @@ export function eel() {
     });
 
 
-    // (pre-timers-sync-fix) PENDING FIX: CURRENTLY, onDeathEvents PLAYS WHEN THE HEAD TOUCHES A SQUARE THAT WAS OCCUPIED BY A BODY PART IN THE PREVIOUS GAME TICK /////////////////////////////////////////////////////////////////////////////////
+    // (pre-timers-sync-fix) PENDING FIX: CURRENTLY, onDeathEvents() PLAYS WHEN THE HEAD TOUCHES A SQUARE THAT WAS OCCUPIED BY A BODY PART IN THE PREVIOUS GAME TICK /////////////////////////////////////////////////////////////////////////////////
     // #region GAME OVER IF HEAD TOUCHES BODY
-    existingBodySpaces = [...tiles].filter((tile) => {
+    /* existingBodySpaces = [...tiles].filter((tile) => {
       return tile.querySelector(".eelbody");
     });
     existingBodySpaces.forEach((tile) => {
       if (tile.querySelector(".eelhead")) {
         onDeathEvents();
       }
-    });
+    }); */
     if (!hasEaten) {
       eelbodySquares.forEach((square) => {
         square.remove();
@@ -196,11 +196,16 @@ export function eel() {
           }
       if (!hasEaten) {
         eelBody.pop();
-        updateEelBody();
       } else {
         hasEaten = false;
-        updateEelBody();
       }
+      
+      updateEelBody();
+      
+      if(eelBody.slice(1).includes(newPosition)){
+        onDeathEvents()
+      }
+
     }
   }
 
